@@ -1,0 +1,45 @@
+<html>
+    <head>
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container">
+            <h1 class="display-4 text-center">Kinthil Giniritir</h1>
+            <textarea id="inpit" class="form-control" rows=10 cols=50></textarea>
+            <div class="d-flex justify-content-center">
+                <button class="m-3 align-middle btn btn-primary btn-lg active"type="submit" onClick="ganti('i')">GINTI</button>
+                <button class="m-3 align-middle btn btn-primary btn-lg active"type="submit" onClick="ganti('a')">GANTA</button>
+                <button class="m-3 align-middle btn btn-primary btn-lg active"type="submit" onClick="ganti('e')">GENTE</button>
+                <button class="m-3 align-middle btn btn-primary btn-lg active"type="submit" onClick="ganti('o')">GONTO</button>
+                <button class="m-3 align-middle btn btn-primary btn-lg active"type="submit" onClick="ganti('u')">GUNTU</button>
+                <button class="m-3 align-middle btn btn-primary btn-lg active"type="submit" onClick="acak()">ACAK</button>
+            </div>
+            <textarea id="itpit" class="form-control" rows=10 cols=50></textarea>
+            <div class="d-flex justify-content-center m-5">
+                © 2020 k1m0ch1. All Rights Reserved.
+            </div>
+        </div>
+    </body>
+    <script>
+        var inpit = document.getElementById("inpit");
+        var itpit = document.getElementById("itpit");
+        function ganti(vocal){
+            itpit.value = inpit.value.replace(/[aeiou]/gi, vocal);
+        }
+
+        function acak(){
+            var hisil = "";
+            var vikil = ["a", "i", "u", "e", "o"];
+            for (var i = 0; i < inpit.value.length; i++) {
+                if (!'aeiou'.includes(inpit.value[i])) {
+                    hisil += inpit.value[i];
+                }else{
+                    hisil += vikil[Math.floor(Math.random()*vikil.length)];
+                }
+            }
+
+            itpit.value = hisil;
+
+        }
+    </script>
+</html>
